@@ -7,7 +7,7 @@ import NoteContext from './noteContex'
 function NoteState(props) {
   const notesInitial=[
     {
-    "_id": "62ffee191c742a67a494524f",
+    "_id": "162ffee191c4742a67a494524f",
     "user": "62e6a394509eae13366756e9",
     "title": "my titlele",
     "description": "hello request 2",
@@ -16,7 +16,7 @@ function NoteState(props) {
     "__v": 0
   },
   {
-    "_id": "62ffee2b1c742a67a4945254",
+    "_id": "262ffee2b1c742a67a4945254",
     "user": "62e6a394509eae13366756e9",
     "title": "my titlele 2",
     "description": "hello request 21",
@@ -25,7 +25,7 @@ function NoteState(props) {
     "__v": 0
   },
   {
-    "_id": "62ffee191c742a67a494524f",
+    "_id": "362ffee191c742a67a494524f",
     "user": "62e6a394509eae13366756e9",
     "title": "my titlele",
     "description": "hello request 2",
@@ -34,7 +34,7 @@ function NoteState(props) {
     "__v": 0
   },
   {
-    "_id": "62ffee2b1c742a67a4945254",
+    "_id": "462ffee2b1c742a67a4945254",
     "user": "62e6a394509eae13366756e9",
     "title": "my titlele 2",
     "description": "hello request 21",
@@ -43,7 +43,7 @@ function NoteState(props) {
     "__v": 0
   },
   {
-    "_id": "62ffee2b1c742a67a4945254",
+    "_id": "562ffee2b1c742a67a4945254",
     "user": "62e6a394509eae13366756e9",
     "title": "my titlele 2",
     "description": "hello request 21",
@@ -54,9 +54,34 @@ function NoteState(props) {
 ];
 
   const [notes,setNotes]=useState(notesInitial)
+
+  const addNote=()=>{
+    const addNote=(title,description,tag)=>{
+      console.log("Adding a new note")
+      const note={
+        "_id": "61322f119553781a8ca8d0e08",
+        "user": "6131dc5e3e4037cd4734a0664",
+        "title": title,
+        "description": description,
+        "tag": tag,
+        "date": "2021-09-03T14:20:09.668Z",
+        "__v": 0
+      };
+      setNotes(notes.concat(note))
+    }
+  }
+
+  const deleteNote=()=>{
+    
+  }
+
+  const editNote=()=>{
+    
+  }
+
   return (
     <div>
-    <NoteContext.Provider value={{notes,setNotes}}>
+    <NoteContext.Provider value={{notes,addNote,deleteNote,editNote}}>
         {props.children}
     </NoteContext.Provider>  
     </div>
